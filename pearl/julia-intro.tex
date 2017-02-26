@@ -1,0 +1,160 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{upquote}
+\usepackage{verbatim}
+\usepackage{alltt}
+\usepackage{xcolor}
+\usepackage{courier}
+\usepackage{textcomp}
+\usepackage{graphicx}
+
+% Colors
+\definecolor{codegreen}{RGB}{28,172,0}
+\definecolor{codelilas}{RGB}{170,55,241}
+\definecolor{gray}{RGB}{120,120,120}
+\definecolor{LightGray}{gray}{.95}
+\hypersetup{colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  anchorcolor = blue,
+  pdfborderstyle={/S/U/W 1}}
+
+% Section title slide, from http://tex.stackexchange.com/a/178803
+\AtBeginSection[]{
+\begin{frame}
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+\usebeamerfont{title}\insertsectionhead\par%
+\end{beamercolorbox}
+\vfill
+\end{frame}
+}
+
+% Code snippets
+\usepackage{listings}
+\lstdefinestyle{bash}{%
+  language=bash,%
+  basicstyle=\footnotesize\ttfamily,%
+  showstringspaces=false,%
+  commentstyle=\color{gray},%
+  keywordstyle=\color{blue},%
+  xleftmargin=0.0in,%
+  xrightmargin=0.0in,%
+  backgroundcolor=\color{LightGray},
+  escapeinside={\%*}{*}
+}
+\newcommand\bashstyle{\lstset{style=bash}}
+
+\lstdefinestyle{matlab}{%
+  language=Matlab,%
+  basicstyle=\footnotesize\ttfamily,%
+  breaklines=true,%
+  morekeywords={matlab2tikz},%
+  keywordstyle=\color{blue},%
+  morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},%
+  identifierstyle=\color{black},%
+  stringstyle=\color{codelilas},%
+  commentstyle=\color{codegreen},%
+  showstringspaces=false,%
+  emph=[1]{for,end,break,switch,case},%
+  emphstyle=[1]\color{blue},%
+  upquote=true,%
+  backgroundcolor=\color{LightGray}
+}
+\newcommand\matlabstyle{\lstset{style=matlab}}
+\newcommand{\matlabcode}[1]{%
+    \matlabstyle%
+    \lstinputlisting{#1}
+}
+
+% Highlight the 'julia>' prompt.
+% See http://tex.stackexchange.com/a/172076/50294 for the additional highlighting
+% See http://tex.stackexchange.com/a/180619/50294 for the '>' issue
+\makeatletter
+\lst@InstallKeywords k{attributes}{attributestyle}\slshape{attributestyle}{}ld
+\makeatother
+
+% Julia definition (c) 2014 Jubobs
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={\$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   % morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\lstdefinestyle{julia}{%
+  language=Julia,%
+  basicstyle=\footnotesize\ttfamily,%
+  breaklines=true,%
+  keywordstyle=\bfseries\color{blue},%
+  identifierstyle=\color{black},%
+  stringstyle=\color{codegreen},%
+  commentstyle=\color{codelilas},%
+  showstringspaces=false,%
+  upquote=true,%
+  backgroundcolor=\color{LightGray},%
+  alsoletter={>},%
+  moreattributes={julia>}, %
+  attributestyle = \bfseries\color{green}, %
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+}
+\newcommand\juliastyle{\lstset{style=julia}}
+\newcommand{\juliacode}[1]{%
+    \juliastyle%
+    \lstinputlisting{#1}
+}
+
+% Inline code snippets.
+% See http://tex.stackexchange.com/a/42964 and
+%     http://tex.stackexchange.com/a/83883/50294
+\newcommand\bashinline[1]{\colorbox{LightGray}{{\bashstyle\lstinline!#1!}}}
+\newcommand\matlabinline[1]{\colorbox{LightGray}{{\matlabstyle\lstinline!#1!}}}
+\newcommand\juliainline[1]{\colorbox{LightGray}{{\juliastyle\lstinline!#1!}}}
+\newcommand\genericinline[1]{\colorbox{LightGray}{#1}}
+
+% Title slide
+\begin{document}
+\title{Introduction to Julia}
+\author{Pearl Li}
+\date{March 10th and 13th, 2017}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Syntax Review}
+
+\begin{frame}
+  \frametitle{Title}
+\end{frame}
+
+
+\section{Types, Multiple Dispatch, and JIT Compilation}
+
+\begin{frame}
+  \frametitle{Title}
+\end{frame}
+
+
+\section{Exercises}
+
+\begin{frame}
+  \frametitle{Title}
+\end{frame}
+
+
+\end{document}
