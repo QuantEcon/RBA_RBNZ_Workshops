@@ -1,6 +1,7 @@
-# RBA_RBNZ_Workshops
 
-This repository containts code and teaching material for the workshops at the RBA and RBNZ in March 2017.
+# Macroeconomic Modeling with Julia
+
+This repository containts code and teaching material for Julia workshops at the RBA and RBNZ in March 2017.
 
 ## Software
 
