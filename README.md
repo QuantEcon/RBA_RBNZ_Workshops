@@ -15,7 +15,8 @@ For those using their own machines, it's possible install all of this and more i
 
 * [JuliaPro](http://juliacomputing.com/products/juliapro.html)
 
-A free version of JuliaPro is now available.
+Make sure that you have the latest version, which is currently JuliaPro
+0.5.0.5.  A free version is now available.  
 
 
 ## Resources
